@@ -279,9 +279,6 @@ export const agentFunction = inngest.createFunction(
           max_tokens: 5000,
         },
       }),
-      // model: gemini({
-      //   model: "gemini-2.5-pro",
-      // }),
       tools: [getMeetResults],
     });
     const answerAgent = createAgent({
@@ -340,12 +337,6 @@ export const agentFunction = inngest.createFunction(
             
             Think step by step and reason through your decision before calling a tool.
             `,
-      // model: anthropic({
-      //   model: "claude-3-5-sonnet-latest",
-      //   defaultParameters: {
-      //     max_tokens: 1000,
-      //   },
-      // }),
       model: gemini({
         model: "gemini-2.5-flash",
       }),
@@ -418,7 +409,6 @@ export const agentFunction = inngest.createFunction(
     });
 
     // Optimized router that terminates after Meet Summary Agent based on state
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: fix this
     const optimizedRouter = ({ network }: { network: any }) => {
       const isCompleted = network.state.data.meetSummaryAgentCompleted;
 
@@ -432,12 +422,6 @@ export const agentFunction = inngest.createFunction(
     const meetQueryNetwork = createNetwork({
       name: "Meet Query Network",
       agents: [meetQueryAgent, answerAgent, supervisorRoutingAgent],
-      // defaultModel: anthropic({
-      //   model: "claude-3-5-sonnet-latest",
-      //   defaultParameters: {
-      //     max_tokens: 1000,
-      //   },
-      // }),
 
       defaultModel: gemini({
         model: "gemini-2.5-pro",
