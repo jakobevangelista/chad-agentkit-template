@@ -1,4 +1,4 @@
-# 🏋️‍♂️  Powerlifting-Agent Sample (Read-Only)
+# Chad
 
 > **Heads-up:**  
 > This repo is **not a runnable project**—it’s a **reference snippet** that shows how to wire an LLM “agent network” with Inngest AgentKit, ClickHouse, and Convex.  Clone or copy pieces at your own risk; you’ll still need to add real database code, environment variables, and UI if you want a working app.
